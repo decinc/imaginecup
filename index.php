@@ -46,4 +46,13 @@ function Handle_Errors()
     }
 }
 ?>
+<head>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="navbar">
+  <div class="navbar-inner" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
+    <div class="container">
+      <!-- ... and so on ... -->
