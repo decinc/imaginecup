@@ -1,6 +1,6 @@
 <?php
 $hostname = "skugbj1ioa.database.windows.net"; //서버 ip
-$username = "decinc";  //db접근 user
+$username = "decinc@skugbj1ioa";  //db접근 user
 $password = "dbswlstn1!";  //db접근 user password
 $dbName = "decinc";  //odbc dns명
  
