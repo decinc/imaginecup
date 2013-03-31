@@ -8,7 +8,9 @@ $dbName = "decinc";  //odbc dns¸í
  if (!extension_loaded("sqlsrv")) {
   die("sqlsrv extension not loaded");
  }
-
+if(true){
+ die("ASGAGAGAG");
+}
 $mscon=mssql_connect($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND."); 
 
 
