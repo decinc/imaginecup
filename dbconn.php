@@ -4,19 +4,15 @@ $username = "decinc";  //db접근 user
 $password = "dbswlstn1!";  //db접근 user password
 $dbName = "decinc";  //odbc dns명
  
-
- if (!extension_loaded("sqlsrv")) {
-  die("sqlsrv extension not loaded");
- }
-if(true){
- die("ASGAGAGAG");
-}
 $mscon=mssql_connect($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND."); 
 
 
 mssql_select_db($dbName,$mscon) or DIE("Table unavailable"); 
+echo mssql_get_last_message();
 
 $q = mssql_query("select * from user");
+echo mssql_get_last_message();
+
 echo $q;
 while($res = mssql_fetch_array($q)){
 	print_r($res);
