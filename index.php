@@ -61,7 +61,11 @@ function Handle_Errors()
   <div class="navbar-inner" style="-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;">
     <div class="container">
       <!-- ... and so on ... -->
-
+		container
+		<h3>h3 test</h3>
+	</div>
+  </div>
+</div>
 
 </body>
 
