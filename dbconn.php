@@ -13,7 +13,7 @@ echo mssql_get_last_message();
 $q = mssql_query("select * from [dbo].[user]");
 echo mssql_get_last_message();
 
-echo $q;
+echo "q : $q";
 while($res = mssql_fetch_array($q)){
 	echo "loop";
 	print_r($res);
