@@ -1,6 +1,6 @@
 <?php
 
-   $serverName = "tcp:ProvideServerName.skugbj1ioa.database.windows.net,1433";
+   $serverName = "tcp:skugbj1ioa.database.windows.net,1433";
    $userName = 'decinc@skugbj1ioa';
    $userPassword = 'dbswlstn1!';
    $dbName = "decinc";
