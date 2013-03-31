@@ -4,7 +4,7 @@ $username = "decinc@skugbj1ioa";  //db접근 user
 $password = "dbswlstn1!";  //db접근 user password
 $dbName = "decinc";  //odbc dns명
  
-$conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+$conn = sqlsrv_connect($hostname, array("UID"=>$username, "PWD"=>$password, "Database"=>$dbName));
 
 if($conn === false){
     die(print_r(sqlsrv_errors()));
