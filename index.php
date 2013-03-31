@@ -11,8 +11,9 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
       {
-         echo "Col1: ".$row[0]."\n";
-         echo "Col2: ".$row[1]."\n";
+		  print_r($row);
+         //echo "Col1: ".$row[0]."\n";
+
       }
                                 
       sqlsrv_free_stmt($stmt);
