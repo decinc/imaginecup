@@ -19,5 +19,22 @@ function FatalError($errorMsg)
     Handle_Errors();
     die($errorMsg."\n");
 }
+function Handle_Errors()
+{
+    $errors = sqlsrv_errors(SQLSRV_ERR_ERRORS);
+    $count = count($errors);
+    if($count == 0)
+    {
+       $errors = sqlsrv_errors(SQLSRV_ERR_ALL);
+       $count = count($errors);
+    }
+    if($count > 0)
+    {
+      for($i = 0; $i < $count; $i++)
+      {
+         echo $errors[$i]['message']."\n";
+      }
+    }
+}
 ?>
 
