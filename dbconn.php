@@ -7,6 +7,11 @@ $dbName = "decinc";  //odbc dns¸í
 $mscon=MSSQL_CONNECT($hostname,$username,$password) or DIE("DATABASE FAILED TO RESPOND."); 
 mssql_select_db($dbName,$mscon) or DIE("Table unavailable"); 
 
+$q = mssql_query("select * from user");
 
+while($res = mssql_fetch_array($q)){
+	echo $res;
+
+}
 //mssql_close($mscon);
 ?>
