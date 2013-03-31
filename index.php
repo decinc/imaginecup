@@ -7,7 +7,7 @@ $stmt = sqlsrv_query("select * from user");
    {
      FatalError("Failed to query test table: ");
    }
-while($row = sqlsrv_fetch_array($stmt)){
+while($row = sqlsrv_fetch_array($conn, $stmt)){
  print_r($row);
 }
 // while($row = mssql_fetch_array($r)){
