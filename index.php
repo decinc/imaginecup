@@ -22,6 +22,7 @@ function FatalError($errorMsg)
 function Handle_Errors()
 {
     $errors = sqlsrv_errors(SQLSRV_ERR_ERRORS);
+	print_r($errors);
     $count = count($errors);
     if($count == 0)
     {
@@ -32,7 +33,7 @@ function Handle_Errors()
     {
       for($i = 0; $i < $count; $i++)
       {
-         echo $errors[$i]['message']."\n";
+         print_r($errors[$i]);
       }
     }
 }
