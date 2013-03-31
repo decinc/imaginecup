@@ -1,18 +1,25 @@
 <?
 require_once "dbconn.php";
 
-
-$stmt = sqlsrv_query("select * from user");
-  if ($stmt === false)
+$tsql = "SELECT * FROM [user]";
+$stmt = sqlsrv_query($conn, $tsql);
+   if ($stmt === false)
    {
-     FatalError("Failed to query test table: ");
+     FatalError("Failed to query test table: ".$tsql);
    }
-while($row = sqlsrv_fetch_array($conn, $stmt)){
- print_r($row);
-}
-// while($row = mssql_fetch_array($r)){
-//	print_r($row);
-// }
+   else
+   {
+      while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
+      {
+         echo "Col1: ".$row[0]."\n";
+         echo "Col2: ".$row[1]."\n";
+      }
+                                
+      sqlsrv_free_stmt($stmt);
+   }
+
+   sqlsrv_close($conn);
+
  echo "hello world!";
 function FatalError($errorMsg)
 {
