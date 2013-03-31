@@ -48,8 +48,11 @@ function Handle_Errors()
 ?>
 <html>
 <head>
+<script src="js/less.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css">
+
 </head>
 
 <body>
