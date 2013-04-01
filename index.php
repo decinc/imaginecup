@@ -11,7 +11,7 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
       {
-		  print_r($row);
+		 // print_r($row);
          //echo "Col1: ".$row[0]."\n";
 
       }
@@ -21,7 +21,6 @@ $stmt = sqlsrv_query($conn, $tsql);
 
    sqlsrv_close($conn);
 
- echo "hello world!";
 function FatalError($errorMsg)
 {
     Handle_Errors();
