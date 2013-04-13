@@ -110,11 +110,7 @@ function init(){
 </head>
 
 
-<div id='content'>
 
-
-
-</div>
 <body>
 
 			<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
@@ -124,8 +120,8 @@ function init(){
 					</div>
 				<div class="modal-body">
 					<div class="divDialogElements">
-						<input class="xlarge" id="xlInput" name="xlId" type="text" />
-						<input class="xlarge" id="xlInput" name="xlPw" type="text" />
+						<input class="xlarge" id="xlId" name="xlId" type="text" />\
+						<input type="password" id="xlPw" name="xlPw" class="input-small" placeholder="Password">
 						</div>
 					</div>
 				<div class="modal-footer">
@@ -133,9 +129,11 @@ function init(){
 					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
-			<div class="divButtons">
-				<a data-toggle="modal" href="#windowTitleDialog" class="btn btn-primary btn-large">Set Window Title</a>
-				</div>
+			<div id='content'>
+
+
+
+			</div>
 			</div>
 
 
