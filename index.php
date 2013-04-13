@@ -49,13 +49,14 @@ echo 'not login';
 var id = <?=$_SESSION['id']?>;
 var loginname = <?=$_SESSION['loginid']?>;
 var tree;
+var islogin = true;
 </script>
-<?}?>
 <?}else{?>
 <script>
 var id = 0;
 var loginname = '';
 var tree;
+var islogin = false;
 </script>
 
 
@@ -86,6 +87,7 @@ var tree;
 						var d = JSON.parse(data);
 						id = d.ID;
 						loginname = d.loginid;
+						islogin = true;
 						load_treelist();
 					}else{
 						alert('login fail');
@@ -95,16 +97,13 @@ var tree;
 function init(){
 		
 		$('#contentdiv > *').hide();
-<?
-if(!$is_login){
-?>
-		$('#windowTitleDialog').modal('show'); 
-<?}else{?>
+		if(islogin)
+			$('#windowTitleDialog').modal('show'); 
+
 //로그인시
 	load_treelist();
 	
 
-<?}?>
 }
 function load_treelist(){
 	$.get('treelist.php',function(dat){
