@@ -70,19 +70,27 @@ function show_walldiv(){
 		$('#profilediv').hide();
 	$.get('walllist.php?id=' + current_treeIndex,function(data){
 		wall = JSON.parse(data);
-		$('#content-center-text').html('Wall' + tree.name);
-		$('#walldiv').append("<textarea></textarea>");
+		$('#content-center-text').html(tree.name + "'s wall");
+		$('#walldiv').append("<div id = 'wall_Text'><textarea rows='3'></textarea><button class = 'btn btn-primary'>Image</button><button class = 'btn btn-primary'>Text</button></div>");
 		for(i = 0; i < wall.length; i++){
 			var str = "";
 			str += "<div id = 'wall_text' class = 'wall_text'>";
 			if(wall[i].type == 0)//letter
 				str += wall[i].Content;
 			else
-				str += "<img src='" + wall[i].Content + "'/>";
+				str += "<img src='" + wall[i].Content + "' class='img-polaroid'/>";
 			str += "</div>";
 			$('#walldiv').append(str);
 		}
 	});	
+}
+function post_wall(type){
+	if(type == 'image'){
+
+	}else{
+
+	}
+
 }
 function show_profilediv(){
 	$('#imgdiv').html("");
@@ -92,7 +100,7 @@ function show_profilediv(){
 	$.get('treemenu.php?id=' + current_treeIndex,function(data){
 		tree = JSON.parse(data);
 		$('#content-center-text').html('Profile');
-		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
+		$('#imgdiv').html("<img src='" + tree.ImageUrl + "' class='img-polaroid'/>");
 
 		$('#profile-description').html(tree.description);
 	});
