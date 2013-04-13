@@ -3,6 +3,11 @@
 $is_login = false;
 if($_SESSION['id'])
 	$is_login = true;
+if($is_login)
+echo 'login';
+else
+echo 'not login';
+
 ?>
 <html>
 <head>
@@ -37,14 +42,26 @@ if($_SESSION['id'])
 				}
 </style>
 
+<?if(!$is_login){?>
+
 <script>
-<?
-if(!$is_login){
-?>
-var loginid = <?=$_SESSION['id']?>
-var loginname = <?=$_SESSION['loginid']?>
+
+var id = <?=$_SESSION['id']?>;
+var loginname = <?=$_SESSION['loginid']?>;
 var tree;
+</script>
 <?}?>
+<?}else{?>
+<script>
+var id = 0;
+var loginname = '';
+var tree;
+</script>
+
+
+
+<?}?>
+		<script>	
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
 //					document.getElementById ("xlId").value = 'ID';
@@ -63,9 +80,12 @@ var tree;
 
 				//ajax
 
-				$.post('login.php',{id:document.getElementById ("xlId").value, pw : document.getElementById ("xlPw").value},function(dat){
-					if(dat == "SUCCESS"){
+				$.post('login.php',{id:document.getElementById ("xlId").value, pw : document.getElementById ("xlPw").value},function(data){
+					if(data != "FAIL"){
 						closeDialog();
+						var d = JSON.parse(data);
+						id = d.ID;
+						loginname = d.loginid;
 						load_treelist();
 					}else{
 						alert('login fail');
@@ -73,8 +93,8 @@ var tree;
 				});
 				};
 function init(){
-		$('#walldiv').hide();
-		$('#profilediv').hide();
+		
+		$('#contentdiv > *').hide();
 <?
 if(!$is_login){
 ?>
@@ -98,7 +118,8 @@ function select_treemenu(treeIndex){
 		$('#walldiv').hide();
 		$('#profilediv').show();
 		$('#content-center-text').html(tree.name);
-		$('#imgdiv').html("<img src='" + tree.imageUrl + "'/>");
+		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
+
 		$('#profile-description').html(tree.description);
 		//$('#content').html(data);
 	});

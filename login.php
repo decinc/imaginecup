@@ -15,11 +15,9 @@ $stmt = sqlsrv_query($conn, $tsql);
    }
    else
    {
-      if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
+      if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))
 	   {
-			$_SESSION['id'] = $row[0];
-			$_SESSION['loginid'] = $row[1];
-			echo "SUCCESS";
+			echo json_encode($row);
 	   }
                                 
       sqlsrv_free_stmt($stmt);
