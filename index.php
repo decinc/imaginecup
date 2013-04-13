@@ -126,7 +126,7 @@ function show_walldiv(){
 }
 function post_wall(strtype){
 	var iType = 0;
-	if(type == 'image'){
+	if(strtype == 'image'){
 		iType = 1;
 	}else{
 		iType = 0;
