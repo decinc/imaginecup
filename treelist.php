@@ -17,7 +17,7 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
 	   {
-			print_r($row);
+			print_r($_SESSION);
 	   }
                                 
       sqlsrv_free_stmt($stmt);
