@@ -17,7 +17,16 @@ if($_SESSION['id'])
 <title>Donee Admin</title>
 <style>
 			#divcontent{
-				border: 1px solid #aaa;
+				  padding: 8.5px;
+  margin: 0 0 9px;
+  font-size: 12.025px;
+  line-height: 18px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 			}
 			.divDemoBody  {
 				width: 60%;
