@@ -110,7 +110,7 @@ function show_walldiv(){
 	$.get('walllist.php?id=' + current_treeIndex,function(data){
 		wall = JSON.parse(data);
 		$('#content-center-text').html(tree.name + "'s wall");
-		$('#walldiv').append("<pre><div id = 'wall_Text'><textarea rows='3'></textarea><p class='text-right'><button class = 'btn btn-primary'>Image</button><button class = 'btn btn-primary'>Text</button></p></div></pre>");
+		$('#walldiv').append("<pre><div id = 'wall_Text'><textarea rows='3'></textarea><p class='text-right'><button class = 'btn btn-primary' onclick='post_wall(\"image\")'>Image</button><button class = 'btn btn-primary' onclick='post_wall(\"text\")'>Text</button></p></div></pre>");
 		for(i = 0; i < wall.length; i++){
 			var str = "";
 			str += "<pre><blockquote>";
@@ -128,7 +128,7 @@ function post_wall(type){
 	if(type == 'image'){
 
 	}else{
-
+		
 	}
 
 }
@@ -141,8 +141,8 @@ function show_profilediv(){
 		tree = JSON.parse(data);
 		$('#content-center-text').html('Profile');
 		$('#imgdiv').html("<img src='" + tree.ImageUrl + "' class='img-polaroid'/>");
-
-		$('#profile-description > textarea').html(tree.description);
+		
+		$('#profile-description').html(tree.description);
 	});
 		
 }
