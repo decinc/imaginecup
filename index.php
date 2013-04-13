@@ -236,7 +236,7 @@ function select_treemenu(treeIndex){
 					</div>
 				</div>
 			<div id='background' style="width:500px;margin:auto;padding:auto;">
-			<div id='topmenu'>
+			<div id='topmenu' style="display:inline-block;margin-top:0px;">
 				Signin, write, add, edit
 
 			</div>
@@ -245,7 +245,7 @@ function select_treemenu(treeIndex){
 
 
 			</div>
-			<div id = 'content'>
+			<div id = 'content' style="display:inline-block">
 				<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
 				<div id = 'content-center-text' style='display:inline'></div>
 				<div id = 'content-right-arrow' style='display:inline' onclick='swap_showlist(1)'>▶</div>
@@ -256,10 +256,8 @@ function select_treemenu(treeIndex){
 				</div>
 				<div id = 'profilediv'>
 					<div id = 'imgdiv' class='imgdiv'>
-					
+					</div>					
 					<div id = 'profile-description'>
-
-					</div>
 					</div>
 
 				</div>
