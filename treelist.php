@@ -6,11 +6,10 @@ require_once "dbconn.php";
 
 $id = $_SESSION['id'];
 $tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $id";
-
+echo $tsql;
 
 $stmt = sqlsrv_query($conn, $tsql);
-/*
-   
+
    if ($stmt === false)
    {
      FatalError("Failed to query test table: ".$tsql);
@@ -52,5 +51,5 @@ function Handle_Errors()
       }
     }
 }
-*/
+
 ?>
