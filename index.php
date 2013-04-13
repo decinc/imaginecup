@@ -36,6 +36,35 @@ if($_SESSION['id'])
 			.divButton {
 				padding-top: 12px;
 				}
+			.imgdiv{
+				width:220px;
+			}
+			.imgdiv img{
+				width:200px;
+				height:200px;
+				border:10px solid #aaa;
+				border-bottom:45px solid #aaa;
+				-webkit-box-shadow:3px 3px 3px #666;
+				-moz-box-shadow: 3px 3px 3px #666;
+				box-shadow: 3px 3px 3px #666;
+			}
+			.imgdiv p{
+				position:absolute;
+				text-align:center;
+				width:100%;
+				bottom:0px;
+				font:400 18px/1;
+				color: #222;
+			}
+			.imgdiv #profile-description{
+				position:absolute;
+				text-align:center;
+				width:100%;
+				bottom:0px;
+				font:400 18px/1;
+				color: #222;
+
+			}
 </style>
 
 <?if($is_login){?>
@@ -206,12 +235,12 @@ function select_treemenu(treeIndex){
 					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
-			<div id='background' style='border:1'>
+			<div id='background' style="width:500px;margin:auto;padding:auto;">
 			<div id='topmenu'>
 				Signin, write, add, edit
 
 			</div>
-			<div id='leftmenu' style='display:inline-block'>
+			<div id='leftmenu' style="display:inline-block;margin-right:50px">
 
 
 
@@ -226,12 +255,13 @@ function select_treemenu(treeIndex){
 					
 				</div>
 				<div id = 'profilediv'>
-					<div id = 'imgdiv'>
+					<div id = 'imgdiv' class='imgdiv'>
 					
-					</div>
 					<div id = 'profile-description'>
 
 					</div>
+					</div>
+
 				</div>
 			</div>
 			</div>
