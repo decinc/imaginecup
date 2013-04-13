@@ -18,7 +18,7 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
 	$result = array();
 	$index = 0;
-	  if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))
+	  while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))
 	  {
 		  $result[$index] = $row;
 			$index++;
