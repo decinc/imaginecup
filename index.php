@@ -78,7 +78,7 @@ function show_walldiv(){
 			if(wall[i].type == 0)//letter
 				str += wall[i].Content;
 			else
-				str += "<img src='" + wall[i].Content + "' class='img-polaroid'/>";
+				str += "<img src='" + wall[i].Content + "' width='150px' height='150px' class='img-polaroid'/>";
 			str += "<small>" + wall[i].currentTime.date + "</small>";
 			str += "</blockquote></pre>";
 			$('#walldiv').append(str);
