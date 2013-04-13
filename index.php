@@ -86,10 +86,16 @@ if(!$is_login){
 }
 function load_treelist(){
 	$.get('treelist.php',function(dat){
-		$('#content').html(dat);
+		$('#leftmenu').html(dat);
 	});	
 }
+function select_treemenu(treeIndex){
+	$.get('treemenu.php?id=' + treeIndex,function(data){
 
+		$('#content').html(data);
+	});
+
+}
 </script>
 
 
@@ -118,8 +124,12 @@ function load_treelist(){
 					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
-			<div id='content'>
+			<div id='leftmenu'>
 
+
+
+			</div>
+			<div id = 'content'>
 
 
 			</div>

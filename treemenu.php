@@ -2,15 +2,10 @@
 @session_start();
 
 require_once "dbconn.php";
-?>
-<meta charset='utf-8'/>
-<ul class="nav nav-list">
 
 
-<?
-
-$id = $_SESSION['id'];
-$tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $id";
+$id = $_GET['id'];
+$tsql = "SELECT tr.* FROM [tree] where ID = $id";
 
 $stmt = sqlsrv_query($conn, $tsql);
 
@@ -23,8 +18,8 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       while($row = sqlsrv_fetch_array($stmt))
 	  {
-			//print_r($row);
-			echo "<li><a href='#' onclick='select_treemenu($row[ID])'>".$row[name]."</a></li>";
+			print_r($row);
+
 	  }
                                 
       sqlsrv_free_stmt($stmt);
@@ -56,6 +51,6 @@ function Handle_Errors()
     }
 }
 
+
 ?>
 
-</ul>
