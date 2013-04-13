@@ -80,7 +80,8 @@ function Handle_Errors()
 <script>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
-					//document.getElementById ("xlInput").value = document.title;
+					document.getElementById ("xlId").value = 'ID';
+					document.getElementById ("xlPw").value = 'Password';
 					
 					});
 				init();
@@ -89,12 +90,14 @@ function Handle_Errors()
 				$('#windowTitleDialog').modal('hide'); 
 				};
 			function okClicked () {
+
+				//ajax
 				document.title = document.getElementById ("xlInput").value;
 				closeDialog ();
 				};
 function init(){
 		$('#windowTitleDialog').modal('show'); 
-		alert('asdfsd');
+
 }
 
 
@@ -121,12 +124,13 @@ function init(){
 					</div>
 				<div class="modal-body">
 					<div class="divDialogElements">
-						<input class="xlarge" id="xlInput" name="xlInput" type="text" />
+						<input class="xlarge" id="xlInput" name="xlId" type="text" />
+						<input class="xlarge" id="xlInput" name="xlPw" type="text" />
 						</div>
 					</div>
 				<div class="modal-footer">
 					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
-					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
 			<div class="divButtons">
