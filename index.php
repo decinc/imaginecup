@@ -101,7 +101,13 @@ function show_profilediv(){
 var view_table = new Array();
 view_table[0] = show_profilediv;
 view_table[1] = show_walldiv;
+function swap_showlist(int direction){
+	current_position = direction;
+	if(current_position < 0)
+		current_position = max_position;
 
+	view_table[current_position]();
+}
 </script>
 
 		<script>	
@@ -146,13 +152,7 @@ function init(){
 		}
 
 }
-function swap_showlist(int direction){
-	current_position = direction;
-	if(current_position < 0)
-		current_position = max_position;
 
-	view_table[current_position]();
-}
 function load_treelist(){
 	$.get('treelist.php',function(dat){
 		
