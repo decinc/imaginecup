@@ -101,7 +101,7 @@ function show_profilediv(){
 var view_table = new Array();
 view_table[0] = show_profilediv;
 view_table[1] = show_walldiv;
-function swap_showlist(int direction){
+function swap_showlist(direction){
 	current_position = direction;
 	if(current_position < 0)
 		current_position = max_position;
