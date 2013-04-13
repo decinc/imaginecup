@@ -16,10 +16,10 @@ $stmt = sqlsrv_query($conn, $tsql);
    }
    else
    {
-      while($row = sqlsrv_fetch_array($stmt))
+      if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))
 	  {
-			print_r($row);
-
+			echo json_encode($row);
+			return;
 	  }
                                 
       sqlsrv_free_stmt($stmt);
