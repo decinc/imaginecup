@@ -5,7 +5,7 @@ require_once "dbconn.php";
 
 
 $id = $_GET['id'];
-$tsql = "SELECT tr.* FROM [tree] where ID = $id";
+$tsql = "SELECT * FROM [tree] where ID = $id";
 
 $stmt = sqlsrv_query($conn, $tsql);
 
