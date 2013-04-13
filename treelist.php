@@ -1,14 +1,16 @@
-<?
+<?php
 @session_start();
 
 require_once "dbconn.php";
 
 
-$id = $_POST['id'];
-$pw = $_POST['pw'];
+$id = $_SESSION['id'];
+$tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $id";
 
-$tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $_SESSION['id']";
+
 $stmt = sqlsrv_query($conn, $tsql);
+/*
+   
    if ($stmt === false)
    {
      FatalError("Failed to query test table: ".$tsql);
@@ -50,5 +52,5 @@ function Handle_Errors()
       }
     }
 }
-
+*/
 ?>
