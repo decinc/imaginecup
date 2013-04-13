@@ -4,9 +4,6 @@ $is_login = false;
 if($_SESSION['id'])
 	$is_login = true;
 ?>
-<?
-if(!$is_login){
-?>
 <html>
 <head>
 
@@ -39,14 +36,19 @@ if(!$is_login){
 				padding-top: 12px;
 				}
 </style>
+
 <script>
+
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
 //					document.getElementById ("xlId").value = 'ID';
 //					document.getElementById ("xlPw").value;
 					
 					});
+
+
 				init();
+
 				});
 			function closeDialog () {
 				$('#windowTitleDialog').modal('hide'); 
@@ -58,19 +60,29 @@ if(!$is_login){
 				$.post('login.php',{id:document.getElementById ("xlId").value, pw : document.getElementById ("xlPw").value},function(dat){
 					if(dat == "SUCCESS"){
 						closeDialog();
+						load_treelist();
 					}else{
 						alert('login fail');
 					}
 				});
 				};
 function init(){
+<?
+if(!$is_login){
+?>
 		$('#windowTitleDialog').modal('show'); 
-
-}
+<?}else{?>
+//로그인시
 function load_treelist(){
-	
+	$.get('treelist.php',function(dat){
+		$('#content').html(dat);
+	});	
 
 }
+
+<?}?>
+}
+
 </script>
 
 
@@ -109,21 +121,3 @@ function load_treelist(){
 
 </body>
 </html>
-
-<?}else{?>
-//로그인했을때 코드
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?}?>
