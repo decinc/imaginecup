@@ -3,10 +3,6 @@
 $is_login = false;
 if($_SESSION['id'])
 	$is_login = true;
-if($is_login)
-echo 'login';
-else
-echo 'not login';
 
 ?>
 <html>
@@ -42,7 +38,7 @@ echo 'not login';
 				}
 </style>
 
-<?if(!$is_login){?>
+<?if($is_login){?>
 
 <script>
 
