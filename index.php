@@ -106,7 +106,7 @@ function swap_showlist(direction){
 	current_position = direction;
 	if(current_position < 0)
 		current_position = max_position;
-	console.write(current_position);
+	console.log(current_position);
 	view_table[current_position]();
 }
 </script>
@@ -196,6 +196,10 @@ function select_treemenu(treeIndex){
 					</div>
 				</div>
 			<div id='background' style='border:1'>
+			<div id='topmenu'>
+				Signin, write, add, edit
+
+			</div>
 			<div id='leftmenu' style='display:inline-block'>
 
 
