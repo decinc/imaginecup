@@ -124,7 +124,7 @@ function show_walldiv(){
 		}
 	});	
 }
-function post_wall(type){
+function post_wall(strtype){
 	var iType = 0;
 	if(type == 'image'){
 		iType = 1;
@@ -132,8 +132,8 @@ function post_wall(type){
 		iType = 0;
 	}
 
-	var conent = $('#wall_content').html();
-	$.post('wallpost.php',{type:type,content:content,id:current_treeIndex},function(data){
+	var strcontent = $('#wall_content').val();
+	$.post('wallpost.php',{type:strtype,content:strcontent,id:current_treeIndex},function(data){
 		show_walldiv();
 	
 	});
