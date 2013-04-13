@@ -49,10 +49,11 @@ function Handle_Errors()
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="js/less.js"></script>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css">
+		<link href="http://static.scripting.com/github/bootstrap2/css/bootstrap.css" rel="stylesheet">
+		<script src="http://static.scripting.com/github/bootstrap2/js/jquery.js"></script>
+		<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-transition.js"></script>
+		<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-modal.js"></script>
+
 <title>Donee Admin</title>
 <style>
 			.divDemoBody  {
@@ -75,8 +76,8 @@ function Handle_Errors()
 			.divButton {
 				padding-top: 12px;
 				}
-			</style>
-		<script>
+</style>
+<script>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
 					document.getElementById ("xlInput").value = document.title;
@@ -89,8 +90,8 @@ function Handle_Errors()
 				document.title = document.getElementById ("xlInput").value;
 				closeDialog ();
 				};
-</style>
-<script>
+
+</script>
 function init(){
 
 }
