@@ -142,7 +142,7 @@ function show_profilediv(){
 		$('#content-center-text').html('Profile');
 		$('#imgdiv').html("<img src='" + tree.ImageUrl + "' class='img-polaroid'/>");
 		
-		$('#profile-description').html(tree.description);
+		$('#profile-description').html("<pre>" + tree.description + "</pre>");
 	});
 		
 }
@@ -215,6 +215,7 @@ function select_treemenu(treeIndex){
 		$('#content > *').show();
 		current_position = 0;
 		current_treeIndex = treeIndex;
+		$('li').removeClass();
 		$('#tree_' + treeIndex).addClass('active');
 		show_profilediv();
 }
