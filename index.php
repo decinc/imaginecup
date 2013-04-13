@@ -68,7 +68,7 @@ function show_walldiv(){
 		
 		$('#walldiv').show();
 		$('#profilediv').hide();
-	$.get('walllist.php?id=' + treeIndex,function(data){
+	$.get('walllist.php?id=' + current_treeIndex,function(data){
 		wall = JSON.parse(data);
 		$('#content-center-text').html('Wall' + tree.name);
 		$('#walldiv').append("<textarea></textarea>");
@@ -89,7 +89,7 @@ function show_profilediv(){
 	$('#profile-description').html("");
 		$('#walldiv').hide();
 		$('#profilediv').show();
-	$.get('treemenu.php?id=' + treeIndex,function(data){
+	$.get('treemenu.php?id=' + current_treeIndex,function(data){
 		tree = JSON.parse(data);
 		$('#content-center-text').html('Profile');
 		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
@@ -101,6 +101,7 @@ function show_profilediv(){
 var view_table = new Array();
 view_table[0] = show_profilediv;
 view_table[1] = show_walldiv;
+var current_treeIndex;
 function swap_showlist(direction){
 	current_position = direction;
 	if(current_position < 0)
@@ -163,7 +164,7 @@ function load_treelist(){
 
 function select_treemenu(treeIndex){
 		$('#content > *').show();
-
+		current_treeIndex = treeIndex;
 		show_profilediv();
 }
 </script>
