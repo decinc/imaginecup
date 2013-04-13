@@ -6,10 +6,7 @@ require_once "dbconn.php";
 
 $id = $_SESSION['id'];
 $tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $id";
-echo $tsql;
-echo "<br>";
-echo print_r($_SESSION);
-echo "<br>";
+
 $stmt = sqlsrv_query($conn, $tsql);
 
    if ($stmt === false)
@@ -19,10 +16,11 @@ $stmt = sqlsrv_query($conn, $tsql);
    }
    else
    {
-      if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
-	   {
-			print_r($_SESSION);
-	   }
+      while($row = sqlsrv_fetch_array($stmt))
+	  {
+			print_r($row);
+			echo "<br><br>";
+	  }
                                 
       sqlsrv_free_stmt($stmt);
    }
