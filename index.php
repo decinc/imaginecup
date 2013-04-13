@@ -16,6 +16,9 @@ if($_SESSION['id'])
 
 <title>Donee Admin</title>
 <style>
+			#divcontent{
+				border: 1px solid #aaa;
+			}
 			.divDemoBody  {
 				width: 60%;
 				margin-left: auto;
@@ -231,7 +234,7 @@ function select_treemenu(treeIndex){
 
 			</div>
 			<div id = 'content' style="display:inline-block">
-			<pre>
+
 
 				<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
 				<div id = 'content-center-text' style='display:inline'></div>
@@ -244,12 +247,14 @@ function select_treemenu(treeIndex){
 				<div id = 'profilediv'>
 					<div id = 'imgdiv' class='imgdiv'>
 
-					</div>					
+					</div>
+					<textarea>
 					<div id = 'profile-description'>
 					</div>
+					</textarea>
 
 				</div>
-			</pre>
+
 			</div>
 			</div>
 		</div>
