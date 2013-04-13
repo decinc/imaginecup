@@ -103,9 +103,11 @@ view_table[0] = show_profilediv;
 view_table[1] = show_walldiv;
 var current_treeIndex;
 function swap_showlist(direction){
-	current_position = direction;
+	current_position += direction;
 	if(current_position < 0)
 		current_position = max_position;
+	if(current_position == max_position)
+		current_position = 0;
 	console.log(current_position);
 	view_table[current_position]();
 }
