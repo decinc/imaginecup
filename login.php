@@ -50,6 +50,5 @@ function Handle_Errors()
       }
     }
 }
-?>
 
 ?>
