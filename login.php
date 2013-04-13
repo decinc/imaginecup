@@ -17,8 +17,9 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC))
 	   {
-			$_SESSION['id'] = $row['id'];
-			echo "<result>LOGIN_SUCCESS</result>";
+			$_SESSION['id'] = $row['ID'];
+			$_SESSION['loginname'] = $row['loginid'];
+			echo "SUCCESS";
 	   }
                                 
       sqlsrv_free_stmt($stmt);
