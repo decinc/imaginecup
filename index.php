@@ -43,8 +43,9 @@ if($_SESSION['id'])
 <script>
 
 var id = <?=$_SESSION['id']?>;
-var loginname = <?=$_SESSION['loginid']?>;
+var loginname = '<?=$_SESSION["loginid"]?>';
 var tree;
+var wall;
 var islogin = true;
 </script>
 <?}else{?>
@@ -52,12 +53,22 @@ var islogin = true;
 var id = 0;
 var loginname = '';
 var tree;
+var wall;
 var islogin = false;
 </script>
 
 
 
 <?}?>
+<script>
+var current_position = 0;
+var max_position = 1;
+var view_table;
+view_table[0] = show_profilediv;
+view_table[1] = show_walldiv;
+
+</script>
+
 		<script>	
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
@@ -100,24 +111,56 @@ function init(){
 		}
 
 }
+function swap_showlist(int direction){
+	current_position = direction;
+	if(current_position < 0)
+		current_position = max_position;
+
+	view_table[current_position]();
+}
 function load_treelist(){
 	$.get('treelist.php',function(dat){
 		
 		$('#leftmenu').html(dat);
 	});	
 }
-function select_treemenu(treeIndex){
-	$.get('treemenu.php?id=' + treeIndex,function(data){
-		tree = JSON.parse(data);
+function show_walldiv(){
+		$('#walldiv').show();
+		$('#profilediv').hide();
+	$.get('walllist.php?id=' + treeIndex,function(data){
+		wall = JSON.parse(data);
+		$('#content-center-text').html('Wall' + tree.name);
+		$('#walldiv').html("");
+		$('#walldiv').append("<textarea></textarea>");
+		for(i = 0; i < wall.length; i++){
+			var str = "";
+			str += "<div id = 'wall_text' class = 'wall_text'>";
+			if(wall[i].type == 0)//letter
+				str += wall[i].Content;
+			else
+				str += "<img src='" + wall[i].Content + "'/>";
+			str += "</div>";
+			$('#walldiv').append(str);
+		}
+	});	
+}
+function show_profilediv(){
 		$('#walldiv').hide();
 		$('#profilediv').show();
-		$('#content-center-text').html(tree.name);
+	$.get('treemenu.php?id=' + treeIndex,function(data){
+		tree = JSON.parse(data);
+		$('#content-center-text').html('Profile');
 		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
 
 		$('#profile-description').html(tree.description);
-		//$('#content').html(data);
 	});
+		
+}
 
+function select_treemenu(treeIndex){
+		$('#content > *').show();
+
+		show_profilediv();
 }
 </script>
 
@@ -154,9 +197,9 @@ function select_treemenu(treeIndex){
 
 			</div>
 			<div id = 'content'>
-				<div id = 'content-left-arrow' style='display:inline'>◀</div>
+				<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
 				<div id = 'content-center-text' style='display:inline'></div>
-				<div id = 'content-right-arrow' style='display:inline'>▶</div>
+				<div id = 'content-right-arrow' style='display:inline' onclick='swap_showlist(1)'>▶</div>
 				
 
 				<div id = 'walldiv'>
