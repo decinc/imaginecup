@@ -80,8 +80,10 @@ function Handle_Errors()
 <script>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
-					document.getElementById ("xlInput").value = document.title;
+					//document.getElementById ("xlInput").value = document.title;
+					
 					});
+				init();
 				});
 			function closeDialog () {
 				$('#windowTitleDialog').modal('hide'); 
@@ -92,10 +94,10 @@ function Handle_Errors()
 				};
 function init(){
 		$('#windowTitleDialog').modal('show'); 
+		alert('asdfsd');
 }
 
 
-$.onload(init);
 </script>
 
 
