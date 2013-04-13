@@ -229,6 +229,7 @@ function select_treemenu(treeIndex){
 
 
 			</div>
+			<pre>
 			<div id = 'content' style="display:inline-block">
 				<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
 				<div id = 'content-center-text' style='display:inline'></div>
@@ -240,13 +241,14 @@ function select_treemenu(treeIndex){
 				</div>
 				<div id = 'profilediv'>
 					<div id = 'imgdiv' class='imgdiv'>
+
+					</div>					
 					<div id = 'profile-description'>
 					</div>
-					</div>					
-
 
 				</div>
 			</div>
+			</pre>
 			</div>
 		</div>
 
