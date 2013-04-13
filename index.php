@@ -7,7 +7,7 @@ if($_SESSION['id'])
 <html>
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset='utf-8'>
 		<link href="http://static.scripting.com/github/bootstrap2/css/bootstrap.css" rel="stylesheet">
 		<script src="http://static.scripting.com/github/bootstrap2/js/jquery.js"></script>
 		<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-transition.js"></script>
