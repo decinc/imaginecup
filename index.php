@@ -71,16 +71,16 @@ function show_walldiv(){
 	$.get('walllist.php?id=' + current_treeIndex,function(data){
 		wall = JSON.parse(data);
 		$('#content-center-text').html(tree.name + "'s wall");
-		$('#walldiv').append("<div id = 'wall_Text'><textarea rows='3'></textarea><p class='text-right'><button class = 'btn btn-primary'>Image</button><button class = 'btn btn-primary'>Text</button></p></div>");
+		$('#walldiv').append("<pre><div id = 'wall_Text'><textarea rows='3'></textarea><p class='text-right'><button class = 'btn btn-primary'>Image</button><button class = 'btn btn-primary'>Text</button></p></div></pre>");
 		for(i = 0; i < wall.length; i++){
 			var str = "";
-			str += "<blockquote>";
+			str += "<pre><blockquote>";
 			if(wall[i].type == 0)//letter
 				str += wall[i].Content;
 			else
 				str += "<img src='" + wall[i].Content + "' class='img-polaroid'/>";
 			str += "<small>" + wall[i].currentTime + "</small>";
-			str += "</blockquote>";
+			str += "</blockquote></pre>";
 			$('#walldiv').append(str);
 		}
 	});	
