@@ -38,7 +38,13 @@ if($_SESSION['id'])
 </style>
 
 <script>
+<?
+if(!$is_login){
+?>
+var loginid = <?=$_SESSION['id']?>
+var loginname = <?=$_SESSION['loginid']?>
 
+<?}?>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
 //					document.getElementById ("xlId").value = 'ID';
@@ -72,15 +78,16 @@ if(!$is_login){
 ?>
 		$('#windowTitleDialog').modal('show'); 
 <?}else{?>
-//·Î±×ÀÎ½Ã
+//ë¡œê·¸ì¸ì‹œ
+	load_treelist();
+
+
+<?}?>
+}
 function load_treelist(){
 	$.get('treelist.php',function(dat){
 		$('#content').html(dat);
 	});	
-
-}
-
-<?}?>
 }
 
 </script>
