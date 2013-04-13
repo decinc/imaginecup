@@ -5,7 +5,7 @@ $password = "dbswlstn1!";  //dbÁ¢±Ù user password
 $dbName = "decinc";  //odbc dns¸í
  sqlsrv_configure('WarningsReturnAsErrors', 0);
 
-$conn = sqlsrv_connect($hostname, array("UID"=>$username, "PWD"=>$password, "Database"=>$dbName, "MultipleActiveResultSets"=>true));
+$conn = sqlsrv_connect($hostname, array("UID"=>$username, "PWD"=>$password, "Database"=>$dbName, "MultipleActiveResultSets"=>true, "CharacterSet" => 'UTF-8'));
 
 if($conn === false){
     die(print_r(sqlsrv_errors()));
