@@ -61,9 +61,7 @@ var islogin = false;
 		<script>	
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
-//					document.getElementById ("xlId").value = 'ID';
-//					document.getElementById ("xlPw").value;
-					
+
 					});
 
 
@@ -92,13 +90,14 @@ var islogin = false;
 				};
 function init(){
 		
-		$('#contentdiv > *').hide();
-		if(islogin)
+		$('#content > *').hide();
+		if(!islogin)
+		{
 			$('#windowTitleDialog').modal('show'); 
-
+		}else{
 //로그인시
-	load_treelist();
-	
+			load_treelist();
+		}
 
 }
 function load_treelist(){
