@@ -28,6 +28,19 @@ if($_SESSION['id'])
   -moz-border-radius: 4px;
   border-radius: 4px;
 			}
+			.block-class{
+				  padding: 8.5px;
+  margin: 0 0 9px;
+  font-size: 12.025px;
+  line-height: 18px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+			}
 			.divDemoBody  {
 				width: 60%;
 				margin-left: auto;
@@ -50,6 +63,7 @@ if($_SESSION['id'])
 				}
 			.imgdiv{
 				width:220px;
+				margin:50px;
 			}
 			.imgdiv img{
 				width:200px;
@@ -232,11 +246,13 @@ function select_treemenu(treeIndex){
 					</div>
 				</div>
 			<div id='background' style="width:500px;margin:auto;padding:auto;">
+			
 			<div id='topmenu' style="block;margin-top:0px;">
 			<pre>
 				Signin, write, add, edit
 			</pre>
 			</div>
+			<div id='bottommenu' class = 'block-class'>
 			<div id='leftmenu' style="display:inline-block;margin-right:50px">
 
 
@@ -266,6 +282,7 @@ function select_treemenu(treeIndex){
 				</div>
 
 			</div>
+			</div><!--bottommenu-->
 			</div>
 		</div>
 
