@@ -53,65 +53,85 @@ function Handle_Errors()
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css">
+<title>Donee Admin</title>
+<style>
+			.divDemoBody  {
+				width: 60%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				}
+			.divDemoBody p {
+				font-size: 18px;
+				line-height: 140%;
+				padding-top: 12px;
+				}
+			.divDialogElements input {
+				font-size: 18px;
+				padding: 3px; 
+				height: 32px; 
+				width: 500px; 
+				}
+			.divButton {
+				padding-top: 12px;
+				}
+			</style>
+		<script>
+			$(document).ready(function() {
+				$('#windowTitleDialog').bind('show', function () {
+					document.getElementById ("xlInput").value = document.title;
+					});
+				});
+			function closeDialog () {
+				$('#windowTitleDialog').modal('hide'); 
+				};
+			function okClicked () {
+				document.title = document.getElementById ("xlInput").value;
+				closeDialog ();
+				};
+</style>
+<script>
+function init(){
 
+}
+
+
+$.onload(init);
+
+
+
+</script>
 </head>
 
+
+<div id='content'>
+
+
+
+</div>
 <body>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">Project Name</a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li class="active"><a href="#"><i class="icon-home icon-white"></i> Home</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-search pull-right" action="">
-          <input type="text" class="search-query span2" placeholder="Search">
-        </form>
-      </div><!-- /.nav-collapse -->
-    </div><!-- /.container -->
-  </div><!-- /.navbar-inner -->
-</div><!-- /.navbar -->
+
+			<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+				<div class="modal-header">
+					<a href="#" class="close" data-dismiss="modal">&times;</a>
+					<h3>Please enter a new title for this window.</h3>
+					</div>
+				<div class="modal-body">
+					<div class="divDialogElements">
+						<input class="xlarge" id="xlInput" name="xlInput" type="text" />
+						</div>
+					</div>
+				<div class="modal-footer">
+					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
+					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+					</div>
+				</div>
+			<div class="divButtons">
+				<a data-toggle="modal" href="#windowTitleDialog" class="btn btn-primary btn-large">Set Window Title</a>
+				</div>
+			<p>Note -- See <a href="http://bootstrapdemos.scripting.com/">this page</a> for a list of my Bootstrap demos.</p>
+			</div>
 
 
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li class="nav-header">Nav header</li>
-    <li><a href="#">Separated link</a></li>
-    <li><a href="#">One more separated link</a></li>
-  </ul>
-</li>
-
-<ul class="nav pull-right">
-  <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Utility <b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Item 1</a></li>
-      <li><a href="#">Item 2</a></li>
-      <li><a href="#">Item 3</a></li>
-    </ul>
-  </li>
-</ul>
 </body>
-
 </html>
