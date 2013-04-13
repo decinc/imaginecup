@@ -16,7 +16,7 @@ if($_SESSION['id'])
 
 <title>Donee Admin</title>
 <style>
-			#divcontent{
+			#profilediv{
 				  padding: 8.5px;
   margin: 0 0 9px;
   font-size: 12.025px;
@@ -128,7 +128,7 @@ function show_profilediv(){
 		$('#content-center-text').html('Profile');
 		$('#imgdiv').html("<img src='" + tree.ImageUrl + "' class='img-polaroid'/>");
 
-		$('#profile-description').html(tree.description);
+		$('#profile-description > textarea').html(tree.description);
 	});
 		
 }
@@ -257,10 +257,11 @@ function select_treemenu(treeIndex){
 					<div id = 'imgdiv' class='imgdiv'>
 
 					</div>
-					<textarea>
+					
 					<div id = 'profile-description'>
-					</div>
+					<textarea>
 					</textarea>
+					</div>
 
 				</div>
 
