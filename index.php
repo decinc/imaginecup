@@ -43,7 +43,7 @@ if(!$is_login){
 ?>
 var loginid = <?=$_SESSION['id']?>
 var loginname = <?=$_SESSION['loginid']?>
-
+var tree;
 <?}?>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
@@ -73,6 +73,8 @@ var loginname = <?=$_SESSION['loginid']?>
 				});
 				};
 function init(){
+		$('#walldiv').hide();
+		$('#profilediv').hide();
 <?
 if(!$is_login){
 ?>
@@ -80,19 +82,25 @@ if(!$is_login){
 <?}else{?>
 //로그인시
 	load_treelist();
-
+	
 
 <?}?>
 }
 function load_treelist(){
 	$.get('treelist.php',function(dat){
+		
 		$('#leftmenu').html(dat);
 	});	
 }
 function select_treemenu(treeIndex){
 	$.get('treemenu.php?id=' + treeIndex,function(data){
-
-		$('#content').html(data);
+		tree = JSON.parse(dat);
+		$('#walldiv').hide();
+		$('#profilediv').show();
+		$('#content-center-text').html(tree.name);
+		$('#imgdiv').html("<img src='" + tree.imageUrl + "'/>");
+		$('#profile-description').html(tree.description);
+		//$('#content').html(data);
 	});
 
 }
@@ -124,16 +132,32 @@ function select_treemenu(treeIndex){
 					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
-			<div id='leftmenu'>
+			<div id='background' style='border:1'>
+			<div id='leftmenu' style='display:inline-block'>
 
 
 
 			</div>
 			<div id = 'content'>
+				<div id = 'content-left-arrow' style='display:inline'>◀</div>
+				<div id = 'content-center-text' style='display:inline'></div>
+				<div id = 'content-right-arrow' style='display:inline'>▶</div>
+				
 
+				<div id = 'walldiv'>
+					
+				</div>
+				<div id = 'profilediv'>
+					<div id = 'imgdiv'>
+					
+					</div>
+					<div id = 'profile-description'>
 
+					</div>
+				</div>
 			</div>
 			</div>
+		</div>
 
 
 </body>
