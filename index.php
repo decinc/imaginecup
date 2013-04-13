@@ -253,7 +253,7 @@ function select_treemenu(treeIndex){
 			</pre>
 			</div>
 			<div id='bottommenu' class = 'block-class'>
-			<div id='leftmenu' style="display:inline-block;margin-right:50px">
+			<div id='leftmenu' style="display:inline-block;margin-right:30px;vertical-align: top;margin-top:17px;">
 
 
 
