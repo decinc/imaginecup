@@ -79,7 +79,7 @@ function show_walldiv(){
 				str += wall[i].Content;
 			else
 				str += "<img src='" + wall[i].Content + "' class='img-polaroid'/>";
-			str += "<small>" + wall[i].currentTime + "</small>";
+			str += "<small>" + wall[i].currentTime.date + "</small>";
 			str += "</blockquote></pre>";
 			$('#walldiv').append(str);
 		}
