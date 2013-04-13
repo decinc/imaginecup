@@ -7,11 +7,13 @@ require_once "dbconn.php";
 $id = $_POST['id'];
 $pw = $_POST['pw'];
 
-$tsql = "SELECT tr.* FROM [admin_tree] at where adminId = $_SESSION[id] inner join [tree] tr on tr.ID = at.donateeId";
+$tsql = "SELECT tr.* FROM [admin_tree] adt inner join [tree] tr on tr.ID = adt.donateeId where adt.adminId = $_SESSION['id']";
 $stmt = sqlsrv_query($conn, $tsql);
    if ($stmt === false)
    {
      FatalError("Failed to query test table: ".$tsql);
+
+	 echo print_r($_SESSION);
    }
    else
    {
