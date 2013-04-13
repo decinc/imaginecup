@@ -106,7 +106,7 @@ function swap_showlist(direction){
 	current_position += direction;
 	if(current_position < 0)
 		current_position = max_position;
-	if(current_position == max_position)
+	if(current_position > max_position)
 		current_position = 0;
 	console.log(current_position);
 	view_table[current_position]();
