@@ -63,7 +63,42 @@ var islogin = false;
 <script>
 var current_position = 0;
 var max_position = 1;
-var view_table;
+function show_walldiv(){
+		$('#walldiv').html("");
+		
+		$('#walldiv').show();
+		$('#profilediv').hide();
+	$.get('walllist.php?id=' + treeIndex,function(data){
+		wall = JSON.parse(data);
+		$('#content-center-text').html('Wall' + tree.name);
+		$('#walldiv').append("<textarea></textarea>");
+		for(i = 0; i < wall.length; i++){
+			var str = "";
+			str += "<div id = 'wall_text' class = 'wall_text'>";
+			if(wall[i].type == 0)//letter
+				str += wall[i].Content;
+			else
+				str += "<img src='" + wall[i].Content + "'/>";
+			str += "</div>";
+			$('#walldiv').append(str);
+		}
+	});	
+}
+function show_profilediv(){
+	$('#imgdiv').html("");
+	$('#profile-description').html("");
+		$('#walldiv').hide();
+		$('#profilediv').show();
+	$.get('treemenu.php?id=' + treeIndex,function(data){
+		tree = JSON.parse(data);
+		$('#content-center-text').html('Profile');
+		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
+
+		$('#profile-description').html(tree.description);
+	});
+		
+}
+var view_table = new Array();
 view_table[0] = show_profilediv;
 view_table[1] = show_walldiv;
 
@@ -124,38 +159,7 @@ function load_treelist(){
 		$('#leftmenu').html(dat);
 	});	
 }
-function show_walldiv(){
-		$('#walldiv').show();
-		$('#profilediv').hide();
-	$.get('walllist.php?id=' + treeIndex,function(data){
-		wall = JSON.parse(data);
-		$('#content-center-text').html('Wall' + tree.name);
-		$('#walldiv').html("");
-		$('#walldiv').append("<textarea></textarea>");
-		for(i = 0; i < wall.length; i++){
-			var str = "";
-			str += "<div id = 'wall_text' class = 'wall_text'>";
-			if(wall[i].type == 0)//letter
-				str += wall[i].Content;
-			else
-				str += "<img src='" + wall[i].Content + "'/>";
-			str += "</div>";
-			$('#walldiv').append(str);
-		}
-	});	
-}
-function show_profilediv(){
-		$('#walldiv').hide();
-		$('#profilediv').show();
-	$.get('treemenu.php?id=' + treeIndex,function(data){
-		tree = JSON.parse(data);
-		$('#content-center-text').html('Profile');
-		$('#imgdiv').html("<img src='" + tree.ImageUrl + "'/>");
 
-		$('#profile-description').html(tree.description);
-	});
-		
-}
 
 function select_treemenu(treeIndex){
 		$('#content > *').show();
