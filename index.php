@@ -90,14 +90,14 @@ function Handle_Errors()
 				document.title = document.getElementById ("xlInput").value;
 				closeDialog ();
 				};
-
-</script>
 function init(){
-
+		$('#windowTitleDialog').modal('show'); 
 }
 
 
 $.onload(init);
+</script>
+
 
 
 
@@ -115,7 +115,7 @@ $.onload(init);
 			<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
 				<div class="modal-header">
 					<a href="#" class="close" data-dismiss="modal">&times;</a>
-					<h3>Please enter a new title for this window.</h3>
+					<h3>Login</h3>
 					</div>
 				<div class="modal-body">
 					<div class="divDialogElements">
@@ -130,7 +130,6 @@ $.onload(init);
 			<div class="divButtons">
 				<a data-toggle="modal" href="#windowTitleDialog" class="btn btn-primary btn-large">Set Window Title</a>
 				</div>
-			<p>Note -- See <a href="http://bootstrapdemos.scripting.com/">this page</a> for a list of my Bootstrap demos.</p>
 			</div>
 
 
