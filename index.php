@@ -94,7 +94,7 @@ function load_treelist(){
 }
 function select_treemenu(treeIndex){
 	$.get('treemenu.php?id=' + treeIndex,function(data){
-		tree = JSON.parse(dat);
+		tree = JSON.parse(data);
 		$('#walldiv').hide();
 		$('#profilediv').show();
 		$('#content-center-text').html(tree.name);
