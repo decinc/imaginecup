@@ -40,7 +40,7 @@ function FatalError($errorMsg)
 function Handle_Errors()
 {
     $errors = sqlsrv_errors(SQLSRV_ERR_ERRORS);
-	print_r($errors);
+	//print_r($errors);
     $count = count($errors);
     if($count == 0)
     {

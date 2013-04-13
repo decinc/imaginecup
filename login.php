@@ -17,6 +17,9 @@ $stmt = sqlsrv_query($conn, $tsql);
    {
       if($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC))
 	   {
+			$_SESSION['id'] = $row['ID'];
+			$_SESSION['loginid'] = $row['loginid'];
+
 			echo json_encode($row);
 	   }
                                 
