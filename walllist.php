@@ -5,7 +5,7 @@ require_once "dbconn.php";
 
 
 $id = $_GET['id'];
-$tsql = "SELECT * FROM [wall] where donateeID = $id";
+$tsql = "SELECT * FROM [wall] where donateeID = $id order by currentTime desc;";
 
 $stmt = sqlsrv_query($conn, $tsql);
 
