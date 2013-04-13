@@ -80,8 +80,8 @@ function Handle_Errors()
 <script>
 			$(document).ready(function() {
 				$('#windowTitleDialog').bind('show', function () {
-					document.getElementById ("xlId").value = 'ID';
-					document.getElementById ("xlPw").value = 'Password';
+//					document.getElementById ("xlId").value = 'ID';
+//					document.getElementById ("xlPw").value;
 					
 					});
 				init();
@@ -120,7 +120,7 @@ function init(){
 					</div>
 				<div class="modal-body">
 					<div class="divDialogElements">
-						<input class="xlarge" id="xlId" name="xlId" type="text" />\
+						<input class="xlarge" id="xlId" name="xlId" type="text" placeholder="ID"/>
 						<input type="password" id="xlPw" name="xlPw" class="input-small" placeholder="Password">
 						</div>
 					</div>
