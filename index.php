@@ -245,7 +245,7 @@ function select_treemenu(treeIndex){
 					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
 					</div>
 				</div>
-			<div id='background' style="width:500px;margin:auto;padding:auto;">
+			<div id='background' style="width:700px;margin:auto;padding:auto;">
 			
 			<div id='topmenu' style="block;margin-top:0px;">
 			<pre>
