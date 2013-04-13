@@ -276,7 +276,7 @@ function select_treemenu(treeIndex){
 
 					</div>
 					
-					<div id = 'profile-description'>
+					<div id = 'profile-description' style='width:500px;'>
 					<textarea>
 					</textarea>
 					</div>
