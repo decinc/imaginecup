@@ -48,23 +48,7 @@ if($_SESSION['id'])
 				-moz-box-shadow: 3px 3px 3px #666;
 				box-shadow: 3px 3px 3px #666;
 			}
-			.imgdiv p{
-				position:absolute;
-				text-align:center;
-				width:100%;
-				bottom:0px;
-				font:400 18px/1;
-				color: #222;
-			}
-			.imgdiv #profile-description{
-				position:absolute;
-				text-align:center;
-				width:100%;
-				bottom:0px;
-				font:400 18px/1;
-				color: #222;
 
-			}
 </style>
 
 <?if($is_login){?>
@@ -236,7 +220,7 @@ function select_treemenu(treeIndex){
 					</div>
 				</div>
 			<div id='background' style="width:500px;margin:auto;padding:auto;">
-			<div id='topmenu' style="display:inline-block;margin-top:0px;">
+			<div id='topmenu' style="block;margin-top:0px;">
 				Signin, write, add, edit
 
 			</div>
@@ -256,9 +240,10 @@ function select_treemenu(treeIndex){
 				</div>
 				<div id = 'profilediv'>
 					<div id = 'imgdiv' class='imgdiv'>
-					</div>					
 					<div id = 'profile-description'>
 					</div>
+					</div>					
+
 
 				</div>
 			</div>
