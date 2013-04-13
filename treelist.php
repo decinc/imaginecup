@@ -25,7 +25,7 @@ $stmt = sqlsrv_query($conn, $tsql);
       while($row = sqlsrv_fetch_array($stmt))
 	  {
 			//print_r($row);
-			echo "<li><a href='#' onclick='select_treemenu($row[ID])'>".$row[name]."</a></li>";
+			echo "<li id='tree_$row[ID]'><a href='#' onclick='select_treemenu($row[ID])'>".$row[name]."</a></li>";
 	  }
                                 
       sqlsrv_free_stmt($stmt);

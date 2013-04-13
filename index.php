@@ -215,6 +215,7 @@ function select_treemenu(treeIndex){
 		$('#content > *').show();
 		current_position = 0;
 		current_treeIndex = treeIndex;
+		$('#tree_' + treeIndex).addClass('active');
 		show_profilediv();
 }
 </script>
