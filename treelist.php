@@ -4,6 +4,7 @@
 require_once "dbconn.php";
 ?>
 <meta charset='utf-8'/>
+<pre>
 <ul class="nav nav-list">
 
 
@@ -59,3 +60,4 @@ function Handle_Errors()
 ?>
 
 </ul>
+</pre>
