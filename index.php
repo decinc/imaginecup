@@ -106,7 +106,7 @@ function swap_showlist(direction){
 	current_position = direction;
 	if(current_position < 0)
 		current_position = max_position;
-
+	console.write(current_position);
 	view_table[current_position]();
 }
 </script>
@@ -156,7 +156,6 @@ function init(){
 
 function load_treelist(){
 	$.get('treelist.php',function(dat){
-		
 		$('#leftmenu').html(dat);
 	});	
 }
@@ -164,6 +163,7 @@ function load_treelist(){
 
 function select_treemenu(treeIndex){
 		$('#content > *').show();
+		current_position = 0;
 		current_treeIndex = treeIndex;
 		show_profilediv();
 }
