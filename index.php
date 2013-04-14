@@ -231,8 +231,6 @@ function select_treemenu(treeIndex){
 
 
 
-
-</script>
 </head>
 
 
