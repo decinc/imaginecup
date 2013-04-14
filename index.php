@@ -236,7 +236,7 @@ function select_treemenu(treeIndex){
 
 <body>
 
-	<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true" style='height:200px;'>
+	<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
 		<div class="modal-header">
 			<a href="#" class="close" data-dismiss="modal">&times;</a>
 			<h3>Login</h3>
