@@ -233,63 +233,55 @@ function select_treemenu(treeIndex){
 
 </head>
 
-
-
 <body>
 
-			<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
-				<div class="modal-header">
-					<a href="#" class="close" data-dismiss="modal">&times;</a>
-					<h3>Login</h3>
-				</div>
-				<div class="modal-body">
-					<div class="divDialogElements">
-						<input class="xlarge" id="xlId" name="xlId" type="text" placeholder="ID"/>
-						<input type="password" id="xlPw" name="xlPw" class="input-small" placeholder="Password">
-					</div>
-				</div>
-				<div class="modal-footer">
-					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
-					<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
-				</div>
+	<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+		<div class="modal-header">
+			<a href="#" class="close" data-dismiss="modal">&times;</a>
+			<h3>Login</h3>
+		</div>
+		<div class="modal-body">
+			<div class="divDialogElements">
+				<input class="xlarge" id="xlId" name="xlId" type="text" placeholder="ID"/>
+				<input type="password" id="xlPw" name="xlPw" class="input-small" placeholder="Password">
 			</div>
-			<div id='background' style="width:700px;margin:auto;padding:auto;">
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
+			<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
+		</div>
+	</div><!--windowTitleDialog-->
+
+	<div id='background' style="width:700px;margin:auto;padding:auto;">
+	
+		<div id='topmenu' style="block;margin-top:0px;">
+		<pre>
+			Signin, write, add, edit
+		</pre>
+		</div>
+		<div id='bottommenu' class = 'block-class'>
+			<div id='leftmenu' style="display:inline-block;margin-right:30px;vertical-align: top;margin-top:17px;">
+
+
+
+			</div>
+			<div id = 'content' style="display:inline-block">
+
+
+			<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
+			<div id = 'content-center-text' style='display:inline'></div>
+			<div id = 'content-right-arrow' style='display:inline' onclick='swap_showlist(1)'>▶</div>
+		
+
+			<div id = 'walldiv'></div>
+			<div id = 'profilediv'>
+				<div id = 'imgdiv' class='imgdiv'></div>
 			
-				<div id='topmenu' style="block;margin-top:0px;">
-				<pre>
-					Signin, write, add, edit
-				</pre>
-				</div>
-				<div id='bottommenu' class = 'block-class'>
-				<div id='leftmenu' style="display:inline-block;margin-right:30px;vertical-align: top;margin-top:17px;">
+				<div id = 'profile-description' style='width:500px;'><textarea></textarea></div>
 
+			</div><!--profilediv-->
 
-
-				</div>
-				<div id = 'content' style="display:inline-block">
-
-
-				<div id = 'content-left-arrow' style='display:inline' onclick='swap_showlist(-1)'>◀</div>
-				<div id = 'content-center-text' style='display:inline'></div>
-				<div id = 'content-right-arrow' style='display:inline' onclick='swap_showlist(1)'>▶</div>
-				
-
-				<div id = 'walldiv'></div>
-				<div id = 'profilediv'>
-					<div id = 'imgdiv' class='imgdiv'>
-
-					</div>
-					
-					<div id = 'profile-description' style='width:500px;'>
-					<textarea>
-					</textarea>
-					</div>
-
-				</div><!--profilediv-->
-
-			</div><!--bottommenu-->
-			</div><!--background-->
-
-
+		</div><!--bottommenu-->
+	</div><!--background-->
 </body>
 </html>
