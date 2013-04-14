@@ -5,6 +5,7 @@ if($_SESSION['id'])
 	$is_login = true;
 
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -235,7 +236,7 @@ function select_treemenu(treeIndex){
 
 <body>
 
-	<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true" style='height:400px;'>
+	<div id="windowTitleDialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true" style='height:200px;'>
 		<div class="modal-header">
 			<a href="#" class="close" data-dismiss="modal">&times;</a>
 			<h3>Login</h3>
