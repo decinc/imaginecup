@@ -257,7 +257,7 @@ function select_treemenu(treeIndex){
 	
 		<div id='topmenu' style="block;margin-top:0px;">
 		<pre>
-			Signin, write, add, edit
+			Create QRCode | Signin | write | add | edit
 		</pre>
 		</div>
 		<div id='bottommenu' class = 'block-class'>
