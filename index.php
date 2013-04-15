@@ -173,17 +173,16 @@ function swap_showlist(direction){
 		<script>	
 			$(document).ready(function() {
 				init();
-				});
+			});
+
 			function closeDialog () {
 				$('#windowTitleDialog').modal('hide'); 
-				};
+				
 				$('#qrcodedialog').modal('hide');
 			}
 			function genClicked(){
 
 					$('#qr_holder').html("<img src='qrcode.php?store=" + document.getElementById ("xlshopid").value + "&keys=" + document.getElementById ("xlkey").value + "&point=" + document.getElementById ("xlpoint").value + "&description=" + document.getElementById ("xldescription").value +"'>");
-				
-
 			}
 			function okClicked () {
 
@@ -280,7 +279,7 @@ function select_treemenu(treeIndex){
 	
 		<div id='topmenu' style="block;margin-top:0px;">
 		<pre>
-			<span onclick="$('#windowTitleDialog').modal('show')">Create QRCode</span> | Signin | write | add | edit
+			<span onclick="$('#qrcodedialog').modal('show')">Create QRCode</span> | Signin | write | add | edit
 		</pre>
 		</div>
 		<div id='bottommenu' class = 'block-class'>
