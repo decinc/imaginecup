@@ -172,17 +172,19 @@ function swap_showlist(direction){
 
 		<script>	
 			$(document).ready(function() {
-				$('#windowTitleDialog').bind('show', function () {
-
-					});
-
-
 				init();
-
 				});
 			function closeDialog () {
 				$('#windowTitleDialog').modal('hide'); 
 				};
+				$('#qrcodedialog').modal('hide');
+			}
+			function genClicked(){
+
+					$('#qr_holder').html("<img src='qrcode.php?store=" + document.getElementById ("xlshopid").value + "&keys=" + document.getElementById ("xlkey").value + "&point=" + document.getElementById ("xlpoint").value + "&description=" + document.getElementById ("xldescription").value +"'>");
+				
+
+			}
 			function okClicked () {
 
 				//ajax
@@ -199,7 +201,7 @@ function swap_showlist(direction){
 						alert('login fail');
 					}
 				});
-				};
+			}
 function init(){
 		
 		$('#content > *').hide();
@@ -250,6 +252,27 @@ function select_treemenu(treeIndex){
 		<div class="modal-footer">
 			<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
 			<a href="#" class="btn btn-primary" onclick="okClicked ();">Login</a>
+		</div>
+	</div><!--windowTitleDialog-->
+
+	<div id="qrcodedialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+		<div class="modal-header">
+			<a href="#" class="close" data-dismiss="modal">&times;</a>
+			<h3>QR Code Generator</h3>
+		</div>
+		<div class="modal-body">
+			<div class="divDialogElements">
+				<input class="xlarge" id="xlshopid" name="xlshopid" type="text" placeholder="SHOP ID"/>
+				<input class="xlarge" id="xlkey" name="xlkey" class="input-small" placeholder="KEYS">
+				<input class="xlarge" id="xlpoint" name="xlpoint" class="input-small" placeholder="POINTS">
+				<input class="xlarge" id="xldescription" name="xldescription" class="input-small" placeholder="DESCRIPTION">
+				<div id='qr_holder'></div>	
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
+			<a href="#" class="btn btn-primary" onclick="genClicked ();">Generate</a>
 		</div>
 	</div><!--windowTitleDialog-->
 
