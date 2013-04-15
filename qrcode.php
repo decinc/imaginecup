@@ -8,7 +8,7 @@ $points = $_GET['point'];
 $description = $_GET['description'];
 
 
-$tsql = "insert into [keytable](keys, store_session, points, regdate, is_used, description) values('$keys',$shopid,$points,getDate(),'N','$description')";
+$tsql = "insert into [keytable](keys, store_session, points, regdate, is_used, description) values('$keys','$shopid',$points,getDate(),'N','$description')";
 
 $stmt = sqlsrv_query($conn, $tsql);
 
