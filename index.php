@@ -280,7 +280,7 @@ function select_treemenu(treeIndex){
 	
 		<div id='topmenu' style="block;margin-top:0px;">
 		<pre>
-			Create QRCode | Signin | write | add | edit
+			<span onclick="$('#windowTitleDialog').modal('show')">Create QRCode</span> | Signin | write | add | edit
 		</pre>
 		</div>
 		<div id='bottommenu' class = 'block-class'>
