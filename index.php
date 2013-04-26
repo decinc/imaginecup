@@ -15,7 +15,7 @@ if($_SESSION['id'])
 		<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-transition.js"></script>
 		<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-modal.js"></script>
 
-<title>Donee Admin</title>
+<title>Garden Admin Page</title>
 <style>
 			#profilediv{
 				  padding: 8.5px;
@@ -279,7 +279,7 @@ function select_treemenu(treeIndex){
 	
 		<div id='topmenu' style="block;margin-top:0px;">
 		<pre>
-			<span onclick="$('#qrcodedialog').modal('show')">Create QRCode</span> | Signin | write | add | edit
+			<span onclick="$('#qrcodedialog').modal('show')"><font color='red'>Create QRCode</font></span> | Signin | write | add | edit
 		</pre>
 		</div>
 		<div id='bottommenu' class = 'block-class'>
